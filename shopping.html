@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Jewelry | Luxe & Elegance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Professional Luxury Header -->
+    <header class="navbar">
+        <div class="logo">✨ Aura Jewelry</div>
+        <nav class="nav-links">
+            <a href="#" class="active" onclick="switchPage('home')">Home</a>
+            <a href="#" onclick="switchPage('about')">About Us</a>
+            <a href="#" onclick="switchPage('contact')">Contact</a>
+        </nav>
+        <div class="cart-icon-container" onclick="toggleCart()">
+            <span class="cart-icon">👜</span>
+            <span id="cart-badge" class="badge">0</span>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        
+        <!-- HOME PAGE VIEW -->
+        <section id="page-home" class="page-view active-view">
+            <div class="hero-banner">
+                <h1>Elegance In Every Detail</h1>
+                <p>Discover our cute, handcrafted luxury jewelry collections.</p>
+            </div>
+            <h2 class="section-title">Our Signature Collection</h2>
+            <div id="product-grid" class="product-grid"></div>
+        </section>
+
+        <!-- ABOUT PAGE VIEW -->
+        <section id="page-about" class="page-view">
+            <div class="info-card">
+                <h2>Our Story</h2>
+                <p>Founded in 2026, Aura Jewelry crafts high-quality, ethically sourced luxury accessories. We blend minimalist elegance with adorable accents to bring sparkle to your daily style journey.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE VIEW -->
+        <section id="page-contact" class="page-view">
+            <div class="info-card">
+                <h2>Get In Touch</h2>
+                <p>Have questions about your order or customized jewelry? Drop us a line!</p>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message Here..." rows="5" required></textarea>
+                    <button type="submit" class="checkout-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SLIDE-OUT SHOPPING CART PANEL -->
+        <aside id="cart-panel" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Shopping Bag</h3>
+                <button class="close-cart" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items-list" class="cart-body">
+                <!-- Dynamic Items Inserted Here -->
+            </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total Amount:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="processPurchase()">Place Order & Checkout</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- SUCCESS MESSAGE MODAL POPUP -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-icon">🎉</div>
+            <h2>Purchase Successful!</h2>
+            <p>Thank you for shopping with Aura Jewelry. Your order has been placed and will ship beautiful treasures your way soon.</p>
+            <button class="checkout-btn" onclick="closeSuccessModal()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
